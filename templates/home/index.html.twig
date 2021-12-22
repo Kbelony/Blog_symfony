@@ -6,22 +6,16 @@
 
 
 		<main>
+		{% for article in articles %}
 		    <div class="card" style="margin:80px">
-                <img src='https://via.placeholder.com/350'class="card-img-top" alt="...">
+                <img src='https://img.static-rmg.be/a/view/q75/w/h/2612827/gettyimages-108315037-jpg.jpg'class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
+                    <h5 class="card-title">{{article.title}}</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="{{path('article_show') }}" class="btn btn-dark">Go somewhere</a>
+                    <a href="{{path('article_show', { slug: article.slug}) }}" class="btn btn-dark">Go somewhere</a>
                 </div>
-            </div>	
-            <div class="card" style="margin:80px">
-                <img src="https://via.placeholder.com/350" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="{{path('article_show') }}" class="btn btn-dark">Go somewhere</a>
-                </div>
-            </div>	
+            </div>
+			{% endfor %}	
 		</main>
 		<footer class="my-5 pt-5 text-muted text-center text-small">
 			<p class="mb-1">&copy; 2017–2020 Company Name</p>
