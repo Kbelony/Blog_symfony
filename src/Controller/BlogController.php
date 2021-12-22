@@ -20,6 +20,8 @@ class BlogController extends AbstractController
      * @Route("/", name="test")
      */
     public function home(){
-        return $this->render('blog/test.html.twig');
+        return $this->render('blog/test.html.twig', [
+            
+        ]);
     }
 }
