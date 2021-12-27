@@ -5,17 +5,23 @@
 {% block body %}
 
 
-		<main>
-		{% for article in articles %}
-		    <div class="card" style="margin:80px">
-                <img src='https://img.static-rmg.be/a/view/q75/w/h/2612827/gettyimages-108315037-jpg.jpg'class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">{{article.title}}</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="{{path('article_show', { slug: article.slug}) }}" class="btn btn-dark">Go somewhere</a>
-                </div>
-            </div>
-			{% endfor %}	
+<main>
+	{% for article in articles %}
+		<div class="card_mb-3" style="max-width: 940px;">
+			<div class="row g-0">
+				<div class="col-md-4">
+					<img src="https://lecrabeinfo.net/app/uploads/2021/12/reduire-lutilisation-du-processeur-cpu-dans-windows-61c30d96a8dd3.png" class="img-fluid rounded-start" alt="...">
+				</div>
+				<div class="col-md-8">
+					<div class="card-body">
+						<h5 class="card-title">{{article.title}}</h5>
+							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						<a href="{{path('article_show', { slug: article.slug}) }}" class="btn btn-dark">Go</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	{% endfor %}	
 		</main>
 		<footer class="my-5 pt-5 text-muted text-center text-small">
 			<p class="mb-1">&copy; 2017–2020 Company Name</p>
@@ -34,3 +40,4 @@
 	</div>
 
 {% endblock %}
+
