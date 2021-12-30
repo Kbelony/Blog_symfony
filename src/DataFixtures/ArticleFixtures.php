@@ -31,7 +31,7 @@ class ArticleFixtures extends Fixture
                     ->setArticlesText("Contenu article n°$i")
                     ->setAuthorName($faker->firstNameMale())
                     ->setImage($faker->imageUrl())
-                    ->setSummary($faker->paragraphs(3))
+                    ->setSummary("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut laborel laborum.")
                     ->setAuthorId($faker->randomDigitNotNull())
                     ->setCreatedAt($faker->dateTimeBetween('-2 months'))
                     ->setSlug($faker->sentence())
@@ -46,7 +46,7 @@ class ArticleFixtures extends Fixture
             $days = $now->diff($article->getCreatedAt())->days;
             $minimum = '-'. $days. 'days';
             $comment->setAuthor($faker->name)
-                    ->setContent($faker->paragraphs(2))
+                    ->setContent("qsdqjkdkqd")
                     ->setCreatedAt($faker->dateTimeBetween($minimum))
                     ->setArticle(($article));
             
