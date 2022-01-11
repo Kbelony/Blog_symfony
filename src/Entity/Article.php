@@ -22,12 +22,12 @@ class Article
     /**
      * @ORM\Column(type="text")
      */
-    private $articles_text;
+    public $articles_text;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $author_name;
+    public $author_name;
 
     /**
      * @ORM\Column(type="integer")

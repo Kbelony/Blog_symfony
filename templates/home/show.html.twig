@@ -2,10 +2,26 @@
 
 {% block body %}
  <div class="article">
-    <h5 class="card-title-show"><b>h</b></h5>
-    <img src="https://lecrabeinfo.net/app/uploads/2021/11/ouvrir-et-utiliser-le-terminal-windows-sur-windows-11-10-61a97db049493.jpg" class="card-img-top" alt="...">
+    <h5 class="card-title-show"><b>{{article.title}}</b></h5>
+    <div class="metadata">Par {{article.author_name}} , le {{article.createdAt | date('d/m/y')}} a {{article.createdAt | date('H:i')}}<div>
+    <img src="{{article.image}}" class="card-img-top" alt="...">
         <div class="card-body">
-            <p class="card-text"></p>
+            <p class="card-text">{{article.articles_text}}</p>
         </div>
-</div>	
+</div>
+
+<section id="commentaires">
+    {% for comment in article.comments %}
+    <div class="comment">
+        <div class="row">
+            <div class="col-3">
+                    {{comment.author}} (<small>{{comment.createdAt | date('d/m/y')}}</small>)
+            </div>
+            <div class="col">
+                    {{comment.content | raw}}
+            </div>
+        </div><br>
+    </div>
+    {% endfor %}
+</section>	
 {% endblock %}

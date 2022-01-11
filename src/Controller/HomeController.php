@@ -19,9 +19,11 @@ class HomeController extends AbstractController
             'articles' => $articles,
         ]);
     }
-    #[Route('/articles/{slug}', name: 'article_show')]
-    public function show($slug)
-    {
-        return $this->render('home/show.html.twig');
+
+    #[Route('/articles/{slug}', name: 'test')]
+    public function read(Article $article){
+        return $this->render('home/show.html.twig', [
+            'article' => $article,
+        ]);
     }
 }
